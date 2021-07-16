@@ -1,14 +1,19 @@
-﻿using CryptocurrencyMarket.Model;
-using CryptocurrencyMarket.Services;
-using System;
+﻿using System;
 
 namespace CryptocurrencyMarket
 {
-    class Program 
+    public class Program 
     {
         static void Main(string[] args)
         {
-            
+            try
+            {
+                // do the magic
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
         }
     }
 }

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using CryptocurrencyMarket.Interfaces;
+﻿using CryptocurrencyMarket.Interfaces;
 using CryptocurrencyMarket.Model;
 using CryptocurrencyMarket.Utilities;
+using System;
+using System.Collections.Generic;
 
 namespace CryptocurrencyMarket.Services
 {
@@ -18,7 +17,7 @@ namespace CryptocurrencyMarket.Services
 
         public void AddCurrency(string name, string symbol, decimal rate)
         {
-            if(MarketDay.startOfDay == true)
+            if(MarketDay.AlreadyBought == true)
             {
                 Console.WriteLine("You can only add currency before the market day began");
             }
@@ -42,7 +41,7 @@ namespace CryptocurrencyMarket.Services
 
         public void DeleteCurrency(string symbol)
         {
-            if(MarketDay.startOfDay == true)
+            if(MarketDay.AlreadyBought == true)
             {
                 Console.WriteLine("You can only remove currency before the market day began");
             }

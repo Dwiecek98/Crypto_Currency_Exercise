@@ -1,17 +1,12 @@
 ﻿using CryptocurrencyMarket.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CryptocurrencyMarket.Interfaces
 {
+    // Possible refactor: make these methods members of Participant class, extract logic to CurrencyService
     interface IParticipantService
     {
         public void BuyCurrency(Participant buyer);
-
         public void SellCurrency(Participant seller);
-
-        public void AddFunds(Participant marketParticipant); // założenie że fundusze to złotówki
-
+        public void AddFunds(Participant marketParticipant);
     }
 }

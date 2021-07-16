@@ -1,14 +1,29 @@
+using CryptocurrencyMarket.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CryptocurrencyMarket.Model
 {
-    class MarketDay
+    class MarketDay : IMarketDay
     {
-        public DateTime stockMarketDay { get; set; }
+        public DateTime StockMarketDay { get; set; }
+        public bool AlreadyBought { get; set; }
+        public bool IsOpen { get; private set; }
+    
+        public MarketDay()
+        {
+            StockMarketDay = DateTime.Now;
+            AlreadyBought = false;
+            IsOpen = false;
+        }
 
-        public static bool startOfDay { get; set; }
+        public void Start()
+        {
+            IsOpen = true;
+        }
 
+        public void End()
+        {
+            IsOpen = false;
+        }
     }
 }
